@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="UTF-8"%>
+<%@ page isELIgnored="false" %>
 <%@ page import="java.io.*" %>
 <%@ page import="com.lsj.util.*" %>
 <%@ page import="org.springframework.web.context.WebApplicationContext" %>
