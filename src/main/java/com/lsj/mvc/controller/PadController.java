@@ -36,9 +36,11 @@ public class PadController {
 			});
 			
 			mv.addAttribute("blogs", blogs);
+			return "padview";
 		}else{
 			mv.addAttribute("blogs", null);
+			request.getSession(true).setAttribute("inform", "blogRoot文件夹不存在");
+			return "redirectview";
 		}
-		return "padview";
 	}
 }

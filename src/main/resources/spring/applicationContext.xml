@@ -15,7 +15,7 @@
 			<list>
 				<bean class="com.lsj.util.UrlButton">
 					<property name="name" value="主页" />
-					<property name="url" value="" />
+					<property name="url" value="/springmdblog/pad.do" />
 				</bean>
 				<bean class="com.lsj.util.UrlButton">
 					<property name="name" value="目录" />
@@ -27,7 +27,7 @@
 				</bean>
 				<bean class="com.lsj.util.UrlButton">
 					<property name="name" value="关于我" />
-					<property name="url" value="" />
+					<property name="url" value="/springmdblog/md.do?md=Me" />
 				</bean>
 				<bean class="com.lsj.util.UrlButton">
 					<property name="name" value="GitHub" />
