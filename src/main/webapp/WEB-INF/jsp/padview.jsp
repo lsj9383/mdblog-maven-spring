@@ -1,10 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="UTF-8"%>
+<%@ page isELIgnored="false" %>
 <%@ page import="java.io.*" %>
+<%@ page import="com.lsj.util.*" %>
+<%@ page import="org.springframework.web.context.WebApplicationContext" %>
+<%@ page import="org.springframework.web.context.support.WebApplicationContextUtils" %>
 
 <%
 	response.setCharacterEncoding("utf-8");
 	request.setCharacterEncoding("utf-8");
+	WebApplicationContext wac = WebApplicationContextUtils.getRequiredWebApplicationContext(request.getServletContext());
+	Configuration blogConfig = (Configuration)wac.getBean("blogConfiguration");
 	String viewName = "主页";
 	File[] blogs = (File[]) request.getAttribute("blogs");
  %>
@@ -13,10 +19,10 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<link rel="stylesheet" href="/mdblog/resource/bootstrap.min.css">
-		<link href="/mdblog/resource/home.css" rel="stylesheet" type="text/css">
-		<script src="/mdblog/resource/jquery.min.js"></script>
-		<script src="/mdblog/resource/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/bootstrap.min.css">
+		<link href="${pageContext.request.contextPath}/resource/home.css" rel="stylesheet" type="text/css">
+		<script src="${pageContext.request.contextPath}/resource/jquery.min.js"></script>
+		<script src="${pageContext.request.contextPath}/resource/bootstrap.min.js"></script>
 		<title>Shakeel</title>
 	</head>
 	
@@ -36,6 +42,18 @@
 				
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav navbar-right">
+					<%
+							if(blogConfig != null){
+								for(UrlButton btn : blogConfig.getUrlButtons()){
+									String name = btn.getName();
+									String url = btn.getUrl();
+									String classType = viewName.equals(name) ? "class=\"active\"" : "";
+						%>
+									<li <%= classType %>><a href="<%= url %>"><%= name %></a></li>		
+						<%
+								}
+							}
+						 %>
 					</ul>
 				</div>
 			</div>

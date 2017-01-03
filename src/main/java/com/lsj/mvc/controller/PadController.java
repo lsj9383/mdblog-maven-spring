@@ -12,13 +12,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class PadController {
+public class PadController {  
 	
 	@RequestMapping("/pad")
 	public String pad(HttpServletRequest request, Model mv){
 		String appRoot = request.getServletContext().getRealPath("/");
 		String blogRoot = appRoot+"blogRoot/";
-		
 		File rootBlog = new File(blogRoot);
 		if(rootBlog.exists()){
 			//筛选出博客
