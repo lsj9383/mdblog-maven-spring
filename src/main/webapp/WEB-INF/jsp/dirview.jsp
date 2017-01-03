@@ -9,12 +9,11 @@
 <%
 	response.setCharacterEncoding("utf-8");
 	request.setCharacterEncoding("utf-8");
-	String blogName = request.getParameter("md");
-	String path = String.format("blogRoot/%s.md/%s.html", blogName, blogName);
 	WebApplicationContext wac = WebApplicationContextUtils.getRequiredWebApplicationContext(request.getServletContext());
 	Configuration blogConfig = (Configuration)wac.getBean("blogConfiguration");
-	String viewName = blogName;
+	String viewName = "目录";
  %>
+
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -27,19 +26,7 @@
 		<title>Shakeel</title>
 	</head>
 	
-	
-	<script type="text/javascript">
-		$(document).ready(function(){	
-			$("#mdframe").load(function(){
-				var mainheight = $(this).contents().find("body").height()+100;
-				$(this).height(mainheight);
-				$(this).css("visibility", "none");
-				$(this).css('margin-top',$("nav").height());
-			});
-		});
-		
-	</script>
-	<body>
+	<body>　
 		<nav class="navbar navbar-default navbar-fixed-top" style="opacity: .9" role="navigation">
 			<div class="container-fluid">
 				<!-- Brand and toggle get grouped for better mobile display -->
@@ -50,7 +37,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="http://www.yinwang.org/#"><%=blogName%></a>
+					<a class="navbar-brand" href="#">目录</a>
 				</div>
 				
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -72,7 +59,57 @@
 			</div>
 		</nav>
 		
-    	<iframe id="mdframe" style="width:100%;visibility:hidden" src=<%= path %> scrolling="no" frameborder="0"></iframe>
-    
-    </body>
+		<%	
+			String appRoot = request.getServletContext().getRealPath("/");
+			String blogRoot = appRoot+"blogRoot/";
+			String dirName = request.getParameter("dir");
+			File[] dirList = (File[])  request.getAttribute("dirList");
+			File[] fileList = (File[]) request.getAttribute("fileList");
+		%>
+		<div style="margin: 5% 10% 2% 10%">
+			<table style="width: 100%">
+				<tbody><tr>
+					<td width="70%"><ul class="list-group">
+						
+						<% String parentUrl = String.format("/springmdblog/dir.do?dir=%s", FileUtil.ParentName(dirName)); %>
+						<li class="list-group-item title">
+							<a href="<%= parentUrl %>">..</a>
+						</li>
+			          	 
+			          	 
+						<%
+			          		if(dirList != null){
+			            		for(File subDir : dirList){
+									String subDirName = subDir.getName()+"/";
+									String dirUrl = String.format("/springmdblog/dir.do?dir=%s", dirName+subDirName);
+									String deleteUrl = String.format("/springmdblog/delete.do?file=%s", dirName+subDirName);
+			          	 %>
+			          	 <li class="list-group-item title">
+			          	 	<a href="<%= dirUrl %>">[DIR] <%= subDirName %>  </a> <a href="javascript:alert('<%= deleteUrl %>')">删除</a>
+			          	 </li>
+			          	 <%
+			          	 		}
+			          	 	}
+			          	  %>
+			          	  
+			          	  
+			          	  <%
+			          		if(fileList != null){
+			            		for(File file : fileList){
+									String fileName = file.getName();
+									String fileUrl = String.format("/springmdblog/download.do?file=%s", dirName+fileName);
+									String deleteUrl = String.format("/springmdblog/delete.do?file=%s", dirName+fileName);
+			          	 %>
+			          	 <li class="list-group-item title">
+			          	 	<a href="<%= fileUrl %>">[FIL] <%= fileName %></a> <a href="<%= deleteUrl %>">删除</a>
+			          	 </li>
+			          	 <%
+			          	 		}
+			          	 	}
+			          	  %>
+					</ul></td>
+				</tr></tbody>
+			</table>
+		</div>
+	</body>
 </html>

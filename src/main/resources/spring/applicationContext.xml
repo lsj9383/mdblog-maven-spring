@@ -19,11 +19,11 @@
 				</bean>
 				<bean class="com.lsj.util.UrlButton">
 					<property name="name" value="目录" />
-					<property name="url" value="" />
+					<property name="url" value="/springmdblog/dir.do?dir=/" />
 				</bean>
 				<bean class="com.lsj.util.UrlButton">
 					<property name="name" value="上传" />
-					<property name="url" value="" />
+					<property name="url" value="/springmdblog/uploadview.do" />
 				</bean>
 				<bean class="com.lsj.util.UrlButton">
 					<property name="name" value="关于我" />

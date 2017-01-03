@@ -9,12 +9,11 @@
 <%
 	response.setCharacterEncoding("utf-8");
 	request.setCharacterEncoding("utf-8");
-	String blogName = request.getParameter("md");
-	String path = String.format("blogRoot/%s.md/%s.html", blogName, blogName);
 	WebApplicationContext wac = WebApplicationContextUtils.getRequiredWebApplicationContext(request.getServletContext());
 	Configuration blogConfig = (Configuration)wac.getBean("blogConfiguration");
-	String viewName = blogName;
- %>
+	String viewName = "上传";
+%>
+
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -27,19 +26,7 @@
 		<title>Shakeel</title>
 	</head>
 	
-	
-	<script type="text/javascript">
-		$(document).ready(function(){	
-			$("#mdframe").load(function(){
-				var mainheight = $(this).contents().find("body").height()+100;
-				$(this).height(mainheight);
-				$(this).css("visibility", "none");
-				$(this).css('margin-top',$("nav").height());
-			});
-		});
-		
-	</script>
-	<body>
+	<body>　
 		<nav class="navbar navbar-default navbar-fixed-top" style="opacity: .9" role="navigation">
 			<div class="container-fluid">
 				<!-- Brand and toggle get grouped for better mobile display -->
@@ -50,7 +37,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="http://www.yinwang.org/#"><%=blogName%></a>
+					<a class="navbar-brand" href="http://www.yinwang.org/#">上传</a>
 				</div>
 				
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -72,7 +59,27 @@
 			</div>
 		</nav>
 		
-    	<iframe id="mdframe" style="width:100%;visibility:hidden" src=<%= path %> scrolling="no" frameborder="0"></iframe>
-    
-    </body>
+		
+		
+		
+		<div style="margin: 5% 10% 2% 10%">
+			<form action="${pageContext.request.contextPath}/upload.do" method="post" enctype="multipart/form-data">
+				<table style="width: 100%">
+					<tbody><tr>
+						<td width="70%"><ul class="list-group">
+				          	 <li class="list-group-item title">
+				          	 	<input type="text" name="postdir" placeholder="input dir">
+				          	 </li>
+				          	 <li class="list-group-item title">
+				          	 	<input type="file" name="file">
+				          	 </li>
+				          	 <li class="list-group-item title">
+				          	 	<input type="submit" name="submit" value="submit">
+				          	 </li>
+						</ul></td>
+					</tr></tbody>
+				</table>
+			</form>
+		</div>
+	</body>
 </html>

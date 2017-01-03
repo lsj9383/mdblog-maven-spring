@@ -35,6 +35,8 @@ public class FileUtil {
 	static public boolean DeleteFile(File file){	//只要有一个文件没删干净，就返回false
 		if(file.isFile()){
 			return file.delete();
+		}else if(!file.exists()){
+			return false;
 		}else{
 			File[] fileList = file.listFiles();
 			boolean res = true;
