@@ -34,10 +34,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet" href="/mdblog/resource/bootstrap.min.css">
-<link href="/mdblog/resource/home.css" rel="stylesheet" type="text/css">
-<script src="/mdblog/resource/jquery.min.js"></script>
-<script src="/mdblog/resource/bootstrap.min.js"></script>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/bootstrap.min.css">
+<link href="${pageContext.request.contextPath}/resource/home.css" rel="stylesheet" type="text/css">
+<script src="${pageContext.request.contextPath}/resource/jquery.min.js"></script>
+<script src="${pageContext.request.contextPath}/resource/bootstrap.min.js"></script>
 <title>Shakeel</title>
 	<script type="text/javascript">
 		var t = setTimeout("timeout()", 1000);
