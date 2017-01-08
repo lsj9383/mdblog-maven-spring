@@ -19,8 +19,7 @@ public class DirController {
 		String dirStr = blogRoot + request.getParameter("dir");
 		
 		if(request.getParameter("dir") == null){
-			request.getSession(true).setAttribute("inform", "路径为空");
-			return "redirectview";
+			return "redirect:/dir.do?dir=/";
 		}else{
 			File dir = new File(dirStr);
 			if(dir.isDirectory()){

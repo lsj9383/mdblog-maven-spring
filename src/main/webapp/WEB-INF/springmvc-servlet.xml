@@ -21,6 +21,14 @@
         <property name="defaultEncoding" value="utf-8"></property>   
         <property name="maxUploadSize" value="10485760000"></property>  
         <property name="maxInMemorySize" value="40960"></property>  
-   </bean>  
+   </bean>
+   
+   <mvc:interceptors>
+   		<mvc:interceptor>
+   			<mvc:mapping path="/dir.do"/>
+   			<mvc:mapping path="/uploadview.do"/>
+   			<bean class="com.lsj.interceptor.AccessInterceptor"/>
+   		</mvc:interceptor>
+   </mvc:interceptors>
 	
 </beans>
