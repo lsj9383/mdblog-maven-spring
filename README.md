@@ -28,11 +28,11 @@
 Ä¿Ç°Ö§³ÖÒÔÏÂ6ÖÖÒ³Ãæ¡£
 ### 1.*Ö÷Ò³*
 ÕâÀàËÆÓÚÒ»¸öµ¼º½Ò³Ãæ£¬ÔÚ¸ÃÒ³Ãæ¿ÉÒÔ×ªµ½ÆäËûÒ³ÃæÀıÈç ²©¿ÍÎÄÕÂÁĞ±í£¬Ä¿Ç°ÔİÊ±²»Ö§³Ö²©¿ÍÎÄÕÂµÄ·ÖÀà¡£
-![](https://github.com/lsj9383/mdblog/blob/master/icon/home.png)
+![](https://github.com/lsj9383/mdblog-maven-spring/blob/master/icon/home.png)
 
 ### 2.*µÇÂ¼*
 Î´µÇÂ¼µÄÓÃ»§µÄÈ¨ÏŞÊÇÊÜÏŞµÄ£¬²»ÄÜ¹»ÉÏ´«¡¢É¾³ı¡¢ÏÂÔØÒÔ¼°´ò¿ªºóÌ¨Ä¿Â¼¡£Ö»ÓĞÔÚµÇÂ½ºó²Å¾ß±¸ËùÓĞµÄÈ¨ÏŞ¡£ĞèÒª×¢ÒâµÄÊÇ£¬Ö÷Ò³ÖĞ²¢Ã»ÓĞ¸ø³öµÇÂ¼µÄ°´Å¥£¬¶øÊÇÔÚ`ĞèÒªµÇÂ¼`µÄÊ±ºò£¬×Ô¶¯Ìø³öµÇÂ¼½çÃæ¡£´ËÊ±ÓÃ»§ÔÙÊäÈë½øĞĞµÇÂ¼¡£
-![](https://github.com/lsj9383/mdblog/blob/master/icon/login.png)
+![](https://github.com/lsj9383/mdblog-maven-spring/blob/master/icon/login.png)
 
 ### 3.*Ä¿Â¼*
 ÎªÁË¸üºÃµÄ¹ÜÀíÆ½Ì¨ÖĞµÄÄÚÈİ£¬Æ½Ì¨Ìá¹©ÁË¼òÒ×µÄÎÄ¼ş¹ÜÀí£¬¹ÜÀíµÄ·¶Î§ÏŞÖÆÔÚÁËblogRootÎÄ¼ş¼ĞÖĞÁË£¬ÕâÊÇÒòÎªÖ»ÓĞÕâ¸öÄ¿Â¼ÔÊĞíºÍÓÃ»§½»»¥¡£<br>
@@ -40,19 +40,19 @@
 * µã»÷`[DIR] ...`£¬¿ÉÒÔ½øÈëµ½¶ÔÓ¦µÄÄ¿Â¼ÖĞ¡£
 * µã»÷`[FIL] ...`£¬¿ÉÒÔÏÂÔØ¶ÔÓ¦µÄÎÄ¼ş¡£
 * µã»÷É¾³ıÁ´½Ó£¬½«»á·¢ËÍÉ¾³ıÇëÇó£¬ÒÔÉ¾³ı¶ÔÓ¦µÄÎÄ¼ş»òÎÄ¼ş¼Ğ¡£ĞèÒª×¢ÒâµÄÊÇ£¬ÎÄ¼ş¼Ğ²¢²»»áÖ±½ÓÉ¾³ı£¬¶øÊÇĞèÒªÊäÈëurlÀ´½øĞĞÉ¾³ı¡£
-![](https://github.com/lsj9383/mdblog/blob/master/icon/dir.png)
+![](https://github.com/lsj9383/mdblog-maven-spring/blob/master/icon/dir.png)
 
 ### 4.*ÉÏ´«*
 ÎÄ¼şÉÏ´«µÄÒ³Ãæ£¬¿ÉÒÔÉÏ´«ÈÎÒâÎÄ¼ş¡£·¢ËÍÉÏ´«ÇëÇóÊ±£¬ĞèÒªÖ¸¶¨½«ÎÄÕÂÉÏ´«µ½µÄÂ·¾¶¡£<br>
-![](https://github.com/lsj9383/mdblog/blob/master/icon/upload.png)
+![](https://github.com/lsj9383/mdblog-maven-spring/blob/master/icon/upload.png)
 
 ### 5.*ÎÄÕÂ*
 ²©¿ÍÎÄÕÂµÄÏÔÊ¾Ò³Ãæ£¬ÔÚpadÒ³ÃæÖĞµã»÷¶ÔÓ¦µÄÎÄÕÂ½«»áÏÔÊ¾³öÀ´¸Ã²©¿ÍÄÚÈİ¡£µ±È»£¬¸Ã²©¿ÍÒ³ÃæÊÇÓÉmarkdown×ª»»µ½htmlÔÙ·¢ËÍµ½ä¯ÀÀÆ÷ÖĞµÄ¡£
-![](https://github.com/lsj9383/mdblog/blob/master/icon/article.png)
+![](https://github.com/lsj9383/mdblog-maven-spring/blob/master/icon/article.png)
 
 ### 6.*µÈ´ı*
 ²©¿ÍÎÄÕÂµÄµÈ´ıÒ³Ãæ£¬ÔÚµÇÂ¼ºó»áÌø×ªµ½¸ÃÒ³ÃæÒÔÌáÊ¾µÇÂ¼²Ù×÷µÄ³É¹¦Óë·ñ£¬»áÏÔÊ¾½øÒ»²½Ìø×ªµÄµ¹¼ÆÊ±£¬Ò²¿ÉÒÔÈËÎªµã»÷Á´½ÓÌø×ª¡£½øÒ»²½Ìø×ªµÄÄ¿±êÁ´½ÓÓÉ´¥·¢µÇÂ¼Ò³ÃæµÄ²Ù×÷¾ö¶¨¡£ÈôÊÇÒòÎªÓû·ÃÎÊÄ¿Â¼¶ø´¥·¢µÄµÇÂ¼Ò³Ãæ£¬ÄÇÃ´µÇÂ¼Íê³Éºó»áÏÔÊ¾Ä¿Â¼¡£ÈôÊÇÒòÎªÓûÉÏ´«ÎÄ¼ş¶ø´¥·¢µÄµÇÂ¼Ò³Ãæ£¬ÄÇÃ´µÇÂ¼Íê³Éºó»áÏÔÊ¾ÉÏ´«Ò³Ãæ¡£ÈôµÇÂ¼Ê§°Ü£¬ÄÇÃ´½«Ìø×ªµ½µÇÂ¼Ò³ÃæÒÔ½øĞĞ½øÒ»²½µÇÂ¼¡£
-![](https://github.com/lsj9383/mdblog/blob/master/icon/wait.png)
+![](https://github.com/lsj9383/mdblog-maven-spring/blob/master/icon/wait.png)
 
 ##ËÄ¡¢¹æÔò
 ÒªÈ«ÃæµÄÊ¹ÓÃ¸ÃÆ½Ì¨£¬ĞèÒª×ñÊØÒÔÏÂ¹æÔò¡£
@@ -68,9 +68,9 @@
 ### 4.*×ÊÔ´Â·¾¶*
 ²©¿ÍÖĞµ±ĞèÒªÓÃµ½Ò»¸ö×ÊÔ´µÄÊ±ºò£¬ĞèÒª×¢ÒâĞ´Çå³ş¸Ã×ÊÔ´µÄÂ·¾¶¡£
 * ×ÊÔ´À´×ÔÓÚ²©¿Í·şÎñÆ÷Íâ
-	ĞèÒªĞ´Ã÷Æä×ÊÔ´Â·¾¶µÄurl£¬ÀıÈçÊ¹ÓÃÀ´×ÔgithubÍøÕ¾µÄÍ¼Æ¬×ÊÔ´:`https://github.com/lsj9383/mdblog/blob/master/icon/logo.png?raw=true`.
+	ĞèÒªĞ´Ã÷Æä×ÊÔ´Â·¾¶µÄurl£¬ÀıÈçÊ¹ÓÃÀ´×ÔgithubÍøÕ¾µÄÍ¼Æ¬×ÊÔ´:`https://github.com/lsj9383/mdblog-maven-spring/blob/master/icon/logo.png?raw=true`.
 * ×ÊÔ´À´×ÔÓÚ²©¿Í·şÎñÆ÷ÄÚ
-	Í¨¹ıÉÏ´«¹¦ÄÜ£¬¿ÉÒÔ½«Í¼Æ¬µÈ×ÊÔ´·ÅÖÃÔÚ²©¿Í·şÎñÆ÷ÄÚ²¿£¬²¢ÇÒ·ÅÖÃÓÚ·şÎñÆ÷µÄ²©¿Í·şÎñÂ·¾¶ÏÂµÄblogRootÎÄ¼ş¼ĞÖĞ£¬Òò´Ë·şÎñÆ÷ÄÚ²¿×ÊÔ´×Ü»áÒÔ`/mdblog/blogRoot/`¿ªÍ·¡£ºóÃæÔÚĞ´Ã÷À´×ÔÓÚÄÄ¸öÎÄ¼şÏÂµÄÄÄ¸öÎÄ¼ş¡£ÀıÈçÒıÓÃjscpp.mdÎÄ¼ş¼ĞÏÂµÄjscpp.jpg£¬Ê¹ÓÃÂ·¾¶:`/mdblog/blogRoot/jscpp.md/jscpp.jpg`
+	Í¨¹ıÉÏ´«¹¦ÄÜ£¬¿ÉÒÔ½«Í¼Æ¬µÈ×ÊÔ´·ÅÖÃÔÚ²©¿Í·şÎñÆ÷ÄÚ²¿£¬²¢ÇÒ·ÅÖÃÓÚ·şÎñÆ÷µÄ²©¿Í·şÎñÂ·¾¶ÏÂµÄblogRootÎÄ¼ş¼ĞÖĞ£¬Òò´Ë·şÎñÆ÷ÄÚ²¿×ÊÔ´×Ü»áÒÔ`/springmdblog/blogRoot/`¿ªÍ·¡£ºóÃæÔÚĞ´Ã÷À´×ÔÓÚÄÄ¸öÎÄ¼şÏÂµÄÄÄ¸öÎÄ¼ş¡£ÀıÈçÒıÓÃjscpp.mdÎÄ¼ş¼ĞÏÂµÄjscpp.jpg£¬Ê¹ÓÃÂ·¾¶:`/mdblog/blogRoot/jscpp.md/jscpp.jpg`
 
 ##Îå¡¢ÅäÖÃ
 Î»ÓÚWEB-INFO/µÄconf.json£¬ÊÇ²©¿ÍÆ½Ì¨µÄÅäÖÃÎÄ¼ş£¬¸Ã°æ±¾½öÖ§³ÖjsonµÄÅäÖÃÎÄ¼ş¡£
@@ -89,22 +89,22 @@ usernameÊÇÓÃ»§Ãû£¬passwordÊÇÃÜÂë¡£
 "redirect":
 {
 	"info"		: "ÎŞĞÅÏ¢",
-	"to"		: "/mdblog/pad",
+	"to"		: "/springmdblog/pad",
 	"seconds"	: "3"
 }
 ```
 
 ###3.*µ¼º½À¸ÅäÖÃ*
 µ¼º½À¸Î»ÓÚÒ³Ãæ¶¥¶ËµÄÎ»ÖÃ£¬ËùÓĞµÄÒ³Ãæ¶¼»áÏÔÊ¾¸Ãµ¼º½À¸£¬ÈçÏÂËùÊ¾£º
-![](https://github.com/lsj9383/mdblog/blob/master/icon/nav.png)
+![](https://github.com/lsj9383/mdblog-maven-spring/blob/master/icon/nav.png)
 µ¼º½À¸×î×ó±ßµÄÖ»ÊÇÒ»¸öµ±Ç°Ò³ÃæµÄÌáÊ¾£¬ÓÒ±ßÊÇ¿ÉÒÔµ¼º½µÄÎ»ÖÃ£¬Ã¿¸öµ¼º½ÓÉÒ»¸öÃû×ÖºÍÒ»¸öurl×é³É£¬²¢ÇÒÅäÖÃÔÚbuttons¶ÔÏóÏÂ¡£ÈçÏÂÊÇÒ»¸öÅäÖÃµÄdemo
 ```json
 "buttons":
 [
-	{"name":"Ö÷Ò³"		, "url":"/mdblog/pad"},
-	{"name":"Ä¿Â¼"		, "url":"/mdblog/dir?dir=/"},
-	{"name":"ÉÏ´«"		, "url":"/mdblog/uploadview.jsp"},
-	{"name":"¹ØÓÚÎÒ"	, "url":"/mdblog/md?md=Me"},
+	{"name":"Ö÷Ò³"		, "url":"/springmdblog/pad"},
+	{"name":"Ä¿Â¼"		, "url":"/springmdblog/dir?dir=/"},
+	{"name":"ÉÏ´«"		, "url":"/springmdblog/uploadview.jsp"},
+	{"name":"¹ØÓÚÎÒ"	, "url":"/springmdblog/md?md=Me"},
 	{"name":"Github"	, "url":"https://github.com/lsj9383"}
 ]
 ```
@@ -123,9 +123,9 @@ buttonsÖĞÊÇÒ»¸öÊı×é£¬Ã¿¸öÔªËØ¶¼ÊÇÒ»¸ö¶ÔÏó£¬¸Ã¶ÔÏó·´Ó¦ÁËµ¼º½µÄÃû³ÆºÍÄ¿±êµÄÎ»ÖÃ¡£Ğ
 	},
 	"buttons":
 	[
-		{"name":"Ö÷Ò³"	, "url":"/mdblog/pad"},
-		{"name":"Ä¿Â¼"	, "url":"/mdblog/dir?dir=/"},
-		{"name":"ÉÏ´«"	, "url":"/mdblog/uploadview.jsp"},
+		{"name":"Ö÷Ò³"	, "url":"/springmdblog/pad"},
+		{"name":"Ä¿Â¼"	, "url":"/springmdblog/dir?dir=/"},
+		{"name":"ÉÏ´«"	, "url":"/springmdblog/uploadview.jsp"},
 		{"name":"¹ØÓÚÎÒ"	, "url":"/mdblog/md?md=Me"},
 		{"name":"Github", "url":"https://github.com/lsj9383"}
 	]
