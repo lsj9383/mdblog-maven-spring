@@ -71,7 +71,9 @@
 				<tbody><tr>
 					<td width="70%"><ul class="list-group">
 						
-						<% String parentUrl = String.format("/springmdblog/dir.do?dir=%s", FileUtil.ParentName(dirName)); %>
+						<% 
+							String parentUrl = String.format("/springmdblog/dir.do?dir=%s", FileUtil.ParentName(dirName)); 
+						%>
 						<li class="list-group-item title">
 							<a href="<%= parentUrl %>">..</a>
 						</li>

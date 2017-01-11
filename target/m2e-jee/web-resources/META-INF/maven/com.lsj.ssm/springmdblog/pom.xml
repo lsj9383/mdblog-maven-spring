@@ -137,6 +137,6 @@
   </dependencies>
   
   <build>
-    <finalName>spingmdblog</finalName>
+    <finalName>springmdblog</finalName>
   </build>
 </project>

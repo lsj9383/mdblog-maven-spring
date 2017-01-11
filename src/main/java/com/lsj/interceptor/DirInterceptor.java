@@ -25,7 +25,7 @@ public class DirInterceptor implements HandlerInterceptor {
 		String dirStr = blogRootPath + request.getParameter("dir");
 		
 		if(request.getParameter("dir") == null){
-			request.getRequestDispatcher("/redirectview.do").forward(request, response);
+			request.getRequestDispatcher("/dir.do?dir=/").forward(request, response);
 		}else{
 			File dir = new File(dirStr);
 			if(!dir.isDirectory()){
