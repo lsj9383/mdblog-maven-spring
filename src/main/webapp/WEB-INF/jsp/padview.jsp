@@ -13,6 +13,8 @@
 	Configuration blogConfig = (Configuration)wac.getBean("blogConfiguration");
 	String viewName = "主页";
 	File[] blogs = (File[]) request.getAttribute("blogs");
+	File[] parts = (File[]) request.getAttribute("parts");
+	String parentPrt = request.getParameter("part") == null ? "" : request.getParameter("part");
  %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -64,11 +66,26 @@
 				<tbody><tr>
 					<td width="70%"><ul class="list-group">
 						<%
+			          		if(parts != null){
+				            	for(File part : parts){
+									String name = part.getName();
+									String url = "/springmdblog/pad.do?part="+parentPrt+"/"+name;
+									name = "[+]"+name.substring(0, name.indexOf("."));
+			          	 %>
+			          	 <li class="list-group-item title">
+			          	 	<a href="<%= url %>"><%= name %></a>
+			          	 </li>
+			          	 <%
+			          	 		}
+			          	 	}
+			          	 %>
+			          	  
+						<%
 			          		if(blogs != null){
 				            	for(File blog : blogs){
 									String name = blog.getName();
 									name = name.substring(0, name.indexOf("."));
-									String url = "/springmdblog/md.do?md="+name;
+									String url = "/springmdblog/md.do?md="+parentPrt+"/"+name;
 			          	 %>
 			          	 <li class="list-group-item title">
 			          	 	<a href="<%= url %>"><%= name %></a>

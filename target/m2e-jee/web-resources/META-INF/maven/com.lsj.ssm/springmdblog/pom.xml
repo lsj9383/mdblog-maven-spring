@@ -8,7 +8,7 @@
   <name>springmdblog Maven Webapp</name>
   <url>http://maven.apache.org</url>
   
-    <properties>  
+  <properties>  
         <spring.version>4.3.2.RELEASE</spring.version>  
         <mybatis.version>3.4.1</mybatis.version>   
         <slf4j.version>1.7.7</slf4j.version>  

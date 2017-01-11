@@ -1,6 +1,7 @@
 package com.lsj.mvc.controller;
 
 import java.io.File;
+import java.io.FileFilter;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -11,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
@@ -25,7 +27,44 @@ public class FileController {
 		return "uploadview";
 	}
 	
-	@RequestMapping("/upload")
+	@RequestMapping(value="/dir", method=RequestMethod.GET)
+	public String dir(HttpServletRequest request, HttpServletResponse response){
+		File dir = (File) request.getAttribute("dir");
+		File[] dirList = dir.listFiles(new FileFilter() {
+			public boolean accept(File pathname) {
+				return pathname.isDirectory();
+			}
+		});
+		
+		File[] fileList = dir.listFiles(new FileFilter() {
+			public boolean accept(File pathname) {
+				return pathname.isFile();
+			}
+		});
+		request.setAttribute("dirList", dirList);
+		request.setAttribute("fileList", fileList);
+		return "dirview";
+	}
+	
+	@RequestMapping(value="/download", method=RequestMethod.GET)
+	public void download(HttpServletRequest request, HttpServletResponse response) throws Exception{
+		File file = (File) request.getAttribute("file");
+		
+		String filename = URLEncoder.encode(file.getName(), "utf-8");
+		int fileLength = (int) file.length();
+		
+		response.setContentType("application/x-msdownload");
+        response.addHeader("Content-Disposition", "attachment; filename=\"" + filename + "\"");
+        response.setContentLength(fileLength);
+        
+        OutputStream os = response.getOutputStream();
+        InputStream is = new FileInputStream(file);
+        StreamUtil.InputStream2OutputStream(is, os);
+        os.flush();
+        os.close();is.close();
+	}
+	
+	@RequestMapping(value="/upload", method=RequestMethod.POST)
 	public String upload(HttpServletRequest request, @RequestParam("file") CommonsMultipartFile file, String postdir) throws Exception{
 		String appRoot = request.getServletContext().getRealPath("/");
 		String blogRoot = appRoot+"blogRoot/";
@@ -37,59 +76,18 @@ public class FileController {
 		}
 		
 		file.transferTo(new File(savePath));
-		return "uploadview";
-	}
-	
-	@RequestMapping("/download")
-	public String download(HttpServletRequest request, HttpServletResponse response) throws Exception{
-		String appRoot = request.getServletContext().getRealPath("/");
-		String blogRoot = appRoot+"blogRoot/";
-		String dirName = request.getParameter("file");
-		String fileStr = blogRoot + dirName;
-		
-		File file = new File(fileStr);
-		if(file.isFile()){
-			String filename = URLEncoder.encode(file.getName(), "utf-8");
-			int fileLength = (int) file.length();
-			
-			response.setContentType("application/x-msdownload");
-            response.addHeader("Content-Disposition", "attachment; filename=\"" + filename + "\"");
-            response.setContentLength(fileLength);
-            
-            OutputStream os = response.getOutputStream();
-            InputStream is = new FileInputStream(file);
-            try{
-            	StreamUtil.InputStream2OutputStream(is, os);
-            }catch(Exception e){e.printStackTrace();}
-            finally{os.flush();os.close();is.close();}
-            return null;
-		}else{
-			request.getSession(true).setAttribute("inform", "文件错误,无法下载");
-			return "redirectview";
-		}
+		return "redirect:uploadview.do";
 	}
 	
 	@RequestMapping("/delete")
 	public String delete(HttpServletRequest request, HttpServletResponse response) throws Exception{
-		String appRoot = request.getServletContext().getRealPath("/");
-		String blogRoot = appRoot+"blogRoot/";
-		String fileName = request.getParameter("file");
-		String fileStr = blogRoot + fileName;
-		String dirName = null;
 		
-		response.setCharacterEncoding("utf-8");
+		File file = (File) request.getAttribute("file");
+		String dirName = (String) request.getAttribute("dirName");
 		
-		if(fileName.endsWith("/")){
-			dirName = fileName.substring(0, fileName.lastIndexOf("/"));
-			dirName = fileName.substring(0, dirName.lastIndexOf("/")+1);
-		}else{
-			dirName = fileName.substring(0, fileName.lastIndexOf("/")+1);
-		}
-		
-		File file = new File(fileStr);
 		if(FileUtil.DeleteFile(file)){
-			response.sendRedirect("/springmdblog/dir.do?dir="+URLEncoder.encode(dirName, "UTF-8"));
-			return null;
+			response.setCharacterEncoding("utf-8");
+			return "redirect:dir.do?dir="+URLEncoder.encode(dirName, "UTF-8");
 		}else{
 			request.getSession(true).setAttribute("inform", "删除失败...");
 			return "redirectview";

@@ -9,6 +9,7 @@
            http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd">
 
 	<bean id="blogConfiguration" class="com.lsj.util.Configuration">
+		<property name="appName" value="springmdblog" />
 		<property name="username" value="root" />
 		<property name="password" value="root123" />
 		<property name="urlButtons">

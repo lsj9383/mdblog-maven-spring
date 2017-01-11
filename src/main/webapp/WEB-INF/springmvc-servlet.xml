@@ -25,9 +25,46 @@
    
    <mvc:interceptors>
    		<mvc:interceptor>
+   			<mvc:mapping path="/*.do"/>
+   			<bean class="com.lsj.interceptor.PreprocessInterceptor"/>
+   		</mvc:interceptor>
+   		
+   		<mvc:interceptor>
+   			<mvc:mapping path="/*.do"/>
+   			<bean class="com.lsj.interceptor.LogInterceptor"/>
+   		</mvc:interceptor>
+   		
+   		<mvc:interceptor>
    			<mvc:mapping path="/dir.do"/>
    			<mvc:mapping path="/uploadview.do"/>
+   			<mvc:mapping path="/delete.do"/>
+   			<mvc:mapping path="/download.do"/>
    			<bean class="com.lsj.interceptor.AccessInterceptor"/>
+   		</mvc:interceptor>
+   		
+   		<mvc:interceptor>
+   			<mvc:mapping path="/pad.do"/>
+   			<bean class="com.lsj.interceptor.PadInterceptor"/>
+   		</mvc:interceptor>
+   		
+   		<mvc:interceptor>
+   			<mvc:mapping path="/md.do"/>
+   			<bean class="com.lsj.interceptor.MarkdownInterceptor"/>
+   		</mvc:interceptor>
+   		
+   		<mvc:interceptor>
+   			<mvc:mapping path="/download.do"/>
+   			<bean class="com.lsj.interceptor.DownloadInterceptor"/>
+   		</mvc:interceptor>
+   		
+   		<mvc:interceptor>
+   			<mvc:mapping path="/delete.do"/>
+   			<bean class="com.lsj.interceptor.DeleteInterceptor"/>
+   		</mvc:interceptor>
+   		
+   		<mvc:interceptor>
+   			<mvc:mapping path="/dir.do"/>
+   			<bean class="com.lsj.interceptor.DirInterceptor"/>
    		</mvc:interceptor>
    </mvc:interceptors>
 	

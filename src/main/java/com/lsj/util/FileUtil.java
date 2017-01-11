@@ -15,10 +15,12 @@ public class FileUtil {
 //	private static final MdProcessor processor = MdProcessor.NewInstance("showdown").setPath("/mdblog/mdsource");
 //	private static final MdProcessor processor = MdProcessor.NewInstance("md4j");
 	private static final MdProcessor processor = MdProcessor.NewInstance("md4j").setPath("/mdblog/mdsource");
-			
-	static public String ParentName(String fileName){	//查询fileName的父路径名字，需要注意的是，若已经是根路径了返回的还是根路径。
-		
+	
+	//查询fileName的父路径名字，需要注意的是，若已经是根路径了返回的还是根路径。
+	static public String ParentName(String fileName){
 		String dirName = null;
+		
+		if(fileName == null){return null;}
 		
 		if(fileName.endsWith("/")){
 			dirName = fileName.substring(0, fileName.lastIndexOf("/"));
@@ -30,6 +32,11 @@ public class FileUtil {
 		}
 		
 		return dirName;
+	}
+	
+	//提取后缀
+	static public String Suffix(String name){
+		return name.substring(name.lastIndexOf("."));
 	}
 	
 	static public boolean DeleteFile(File file){	//只要有一个文件没删干净，就返回false
