@@ -14,7 +14,7 @@ import com.lsj.mdprocess.MdProcessor;
 public class FileUtil {
 //	private static final MdProcessor processor = MdProcessor.NewInstance("showdown").setPath("/mdblog/mdsource");
 //	private static final MdProcessor processor = MdProcessor.NewInstance("md4j");
-	private static final MdProcessor processor = MdProcessor.NewInstance("md4j").setPath("/mdblog/mdsource");
+	private static final MdProcessor processor = MdProcessor.NewInstance("md4j").setPath("/springmdblog/mdsource");
 	
 	//查询fileName的父路径名字，需要注意的是，若已经是根路径了返回的还是根路径。
 	static public String ParentName(String fileName){
