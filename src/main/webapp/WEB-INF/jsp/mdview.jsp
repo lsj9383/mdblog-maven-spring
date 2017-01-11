@@ -10,7 +10,8 @@
 	response.setCharacterEncoding("utf-8");
 	request.setCharacterEncoding("utf-8");
 	String blogName = request.getParameter("md");
-	String fileName = request.getParameter("md").substring(request.getParameter("md").lastIndexOf("/"));
+	if(!blogName.startsWith("/")){blogName = "/"+blogName;}
+	String fileName = blogName.substring(blogName.lastIndexOf("/"));
 	String path = String.format("blogRoot/%s.md/%s.html", blogName, fileName);
 	WebApplicationContext wac = WebApplicationContextUtils.getRequiredWebApplicationContext(request.getServletContext());
 	Configuration blogConfig = (Configuration)wac.getBean("blogConfiguration");

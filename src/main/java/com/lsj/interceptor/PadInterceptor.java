@@ -22,7 +22,11 @@ public class PadInterceptor implements HandlerInterceptor {
 
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handle) throws Exception {
 		String part = request.getParameter("part");
-		part = part==null?"/":part;
+		
+		if(part == null){
+			request.getRequestDispatcher("/pad.do?part=/").forward(request, response);
+			return false;
+		}
 		
 		if(!(part.endsWith(".part/") || part.endsWith(".part") || part.equals("/"))){
 			//非分区路径错误

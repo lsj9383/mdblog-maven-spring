@@ -13,8 +13,8 @@
 	Configuration blogConfig = (Configuration)wac.getBean("blogConfiguration");
 	String viewName = "主页";
 	File[] blogs = (File[]) request.getAttribute("blogs");
-	File[] parts = (File[]) request.getAttribute("parts");
-	String parentPrt = request.getParameter("part") == null ? "" : request.getParameter("part");
+	File[] subparts = (File[]) request.getAttribute("parts");
+	String part = request.getParameter("part") == null ? "" : request.getParameter("part");
  %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -44,7 +44,7 @@
 				
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav navbar-right">
-					<%
+						<%
 							if(blogConfig != null){
 								for(UrlButton btn : blogConfig.getUrlButtons()){
 									String name = btn.getName();
@@ -65,11 +65,19 @@
 			<table style="width: 100%">
 				<tbody><tr>
 					<td width="70%"><ul class="list-group">
+						<% 
+							String parentUrl = String.format("/springmdblog/pad.do?part=%s", FileUtil.ParentName(part));
+							if(!part.equals("/")){ 
+						%>
+						<li class="list-group-item title">
+							<a href="<%= parentUrl %>">..</a>
+						</li>
+						<% } %>
 						<%
-			          		if(parts != null){
-				            	for(File part : parts){
-									String name = part.getName();
-									String url = "/springmdblog/pad.do?part="+parentPrt+"/"+name;
+			          		if(subparts != null){
+				            	for(File subpart : subparts){
+									String name = subpart.getName();
+									String url = "/springmdblog/pad.do?part="+part+name+"/";
 									name = "[+]"+name.substring(0, name.indexOf("."));
 			          	 %>
 			          	 <li class="list-group-item title">
@@ -79,13 +87,13 @@
 			          	 		}
 			          	 	}
 			          	 %>
-			          	  
+			          	 <li class="list-group-item title"></li>
 						<%
 			          		if(blogs != null){
 				            	for(File blog : blogs){
 									String name = blog.getName();
 									name = name.substring(0, name.indexOf("."));
-									String url = "/springmdblog/md.do?md="+parentPrt+"/"+name;
+									String url = "/springmdblog/md.do?md="+part+name;
 			          	 %>
 			          	 <li class="list-group-item title">
 			          	 	<a href="<%= url %>"><%= name %></a>
